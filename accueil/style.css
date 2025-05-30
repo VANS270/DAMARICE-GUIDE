@@ -1,0 +1,421 @@
+header
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+a
+{
+    text-decoration: none;
+}
+.resto-heber_voy, .connexion
+/* CES BLOCS ont pour parent .menu_ouvert */
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & > a 
+    {
+        color: white;
+        &:hover
+        {
+            color: rgb(31, 31, 31);
+        }
+    }
+}
+.menu_ouvert
+/* ce bloc sera affliché que lorsque l on cliquera sur le menu  */
+
+{
+    width:200px;
+    height: 280px;
+    background-color: rgb(168, 168, 164);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1.5;
+    border-radius: 10px; 
+    box-shadow: 0px 3px 13px -2px rgba(5, 5, 5, 0.75) ;
+    &:hover
+    {
+        display: flex;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+    }
+
+}
+nav
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 45px;
+    & > a 
+    {
+        color: rgb(14, 14, 14);
+        font-size: large;
+        &:hover
+        {
+            background-color: rgba(173, 174, 175, 0.781);
+            padding: 5px;
+            border-radius: 20px;
+        }
+    }
+}
+.contact
+{
+    border-radius: 45%;
+    background-color: rgb(255, 255, 255);
+    border: 1px black solid;
+}
+.menu
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 5px;
+    &:hover
+    {
+        background-color: rgba(124, 123, 123, 0.712);
+    }
+    &:active + .menu_ouvert
+    {
+        display: flex;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+    }
+}
+.recherche
+{
+    background: url(image_acceuil/REPAS.jpg);
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  
+}
+.decouvre_recherche
+{
+    width: 40%;
+    margin-left: 6%;
+    margin-top: 10%;
+   
+}
+form
+{
+    display: flex;
+    margin-top: 10px;
+}
+input
+{
+    width: 70%;
+    border-radius: 10px 0px 0px 10px; 
+    border: 0;
+    height: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+input[type="email"]
+{
+    width: 70%;
+}
+button
+{
+    width: 19%;
+    height: 50PX;
+    background-color: rgba(255, 0, 0, 0.699); 
+    border-radius: 0px 10px 10px 0px; 
+    border: 0;
+
+}
+p:first-child
+{
+    font-size: 40px;
+}
+.act
+/* c'est la classe que contient chaque bloc dans l'article */
+{
+    display: block;
+    
+   & > a
+   {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 300px;
+        border-radius: 10px;
+        gap: 0px;
+        transition: transform 00ms 100ms ease-in-out ;
+        &:hover
+        {
+            box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.372);
+            transform: perspective(1px)  scale(1.03) ;
+        }
+        & > img
+        {
+            border-radius: 10px 10px 0 0 ; 
+
+            display: block;
+        }
+        & > div
+        {color: black;
+        width: 300px;
+        height: 85px;
+        box-sizing: border-box;
+        padding-left: 7px;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-bottom: 10px;
+        background-color: rgb(249, 249, 249);
+        display: inline-block;
+        border-radius: 0px 0Px 10px 10px;
+        }
+    }
+}
+.actual
+/* ce bloc contient tous les .act */
+{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 120px;
+        margin-bottom: 70px;
+}
+.propos
+{
+    width: 48%;
+    margin-left: 20%;
+    margin-top: 30px;
+    
+    & > img 
+    {
+        position: absolute;
+        bottom: -10%;
+        left: 4%;
+        border-radius: 8px;
+    }
+    & > div
+    {
+       border-radius: 10px;
+       border: 3px solid red;
+       text-align: start;
+       padding: 20px;
+       justify-content: center;
+       & > p
+       {
+         display: inline-block;
+         color: white;
+         background-color: red;
+         font-size: 20px;
+         padding:5px;
+         border-radius: 10px;
+         
+       }
+    }
+}
+.spon
+/* c'est le bloc que conient chaque sponsor */
+{
+    line-height: 1.4;
+    & > a
+    {
+        color: black;
+        font-weight: 600;
+        font-size: larger;
+        display: inline-block;
+        
+        &>div
+        {
+            & > span
+            {
+                color: red;
+                font-size: medium;
+            }
+        }
+    }
+}
+.sponsor
+/* ce bloc contient tous les blocs spon */
+{
+    & > div
+    {
+    display: flex;
+    flex-direction: row;
+    gap: 110px;
+    justify-content: center;
+    }
+}
+footer
+{
+    background-color: rgb(215, 215, 161);
+    margin-top: 80px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+.blocreseau
+{
+    display: flex;
+    flex-direction: row;
+    gap:16px;
+    align-items: center;
+}
+.email-connect
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+}
+
+@media only screen and (max-width:1450px)
+{
+    .act
+/* c'est la classe que contient chaque bloc dans l'article */
+{
+    display: block;
+    
+   & > a
+   {
+        
+        width: 250px;
+        height: 250px;
+       
+        & > img
+        {
+            width: 250px;
+            height: 250px;
+        }
+        & > div
+        {color: black;
+        width: 250px;
+        height: 250px;
+        
+        }
+    }
+}
+    
+}
+@media only screen and (max-width:928px)
+{
+    nav
+    {
+        gap:30px;
+    }
+}
+@media only screen and (max-width:861px)
+{
+    header 
+    {
+        display: block;
+        margin-bottom: 20px;
+        
+    }
+    .header-img
+    {
+       margin-left: 40%;
+       width: 150px;
+
+    }
+    nav
+    {
+        justify-content: space-around;
+    }
+    .recherche
+    {
+       width: 861px;
+    }
+    .actual
+    {
+        
+        gap: 17px;
+        
+    }
+}
+@media only screen and (max-width:810px)
+{
+    nav
+    {
+        & > a
+        {
+            display: none;
+        }
+        display: block;
+    }
+    header
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+    .header-img
+    {
+        margin-left: 1%;
+    }
+    .actual
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2 , 250px);
+        gap: 30px;
+        justify-content: stretch;
+        margin-left: 12%;
+
+        
+    }
+    .bloc-sponsor
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+    }
+}
+body
+{
+    width: max-content;
+}
+@media only screen and (max-width:450px)
+{
+    .recherche
+    {
+        background: none;
+        height: auto;
+        & > div
+        {
+            & > p,a
+            {
+                display: none;
+            }
+        }
+    }
+    input
+    {
+        border: 0.9px solid rgb(14, 14, 14);
+        width: 100%;
+        font-size: large;
+        overflow: hidden;
+    }
+    footer
+    {
+        font-size: 25px;
+        line-height: 2;
+        padding: 20px;
+       
+    }
+    .email-connect 
+    {
+        display: block;
+    }
+}
